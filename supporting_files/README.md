@@ -39,13 +39,15 @@ file structure:
 
 The wnid.json file is a dictionary consisting of classification names as key and
 an array of a number of wnid as value. E. g.:
-{
-    "bear": [
-        "n02131653",
+
+    {
+        "bear": [
+            "n02131653",
+            ...
+        ],
         ...
-    ],
-    ...
-}
+    }
+    
 The keys must have a folder in unsorted/ with the same name as the key.
 
 
