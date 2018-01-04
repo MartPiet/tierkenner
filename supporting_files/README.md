@@ -26,15 +26,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-## ImageDownloader.py ##
-# Requirements:
+# ImageDownloader.py #
+## Requirements:
 You need to have in the same folder as ImageDownloader.py is located the following
 file structure:
-- images
--- wnids.json
--- unsorted
---- bear
---- ... (for each classification one folder)
+* - images
+* -- wnids.json
+* -- unsorted
+* --- bear
+* --- ... (for each classification one folder)
 
 
 The wnid.json file is a dictionary consisting of classification names as key and
@@ -52,27 +52,27 @@ The keys must have a folder in unsorted/ with the same name as the key.
 You also need to have access parameters you only get after a permitted request from
 image-net.org. Fill your access parameters in USERNAME and ACCESSKEY.
 
-# Note:
+## Note:
 Feel free to change the global other variables WNIDS_JSON_PATH and
 DOWNLOAD_SAVEPATH as you need them.
 
-# Common issues:
+## Common issues:
 After starting program, nothing happens:
 This problem can occur because sometimes the image-net.org servers are really slow.
 
-## SeparateImages.py
-# Requirements
+# SeparateImages.py
+## Requirements
 You need to have in the same folder as SeparateImages.py is located the following
 file structure:
-- images
--- unsorted
---- bear
----- {wnid folder}
----- ...
---- ... (for each classification one folder)
--- train
---- bear
---- ... (for each classification one folder)
--- validation
---- bear
---- ... (for each classification one folder)
+* - images
+* -- unsorted
+* --- bear
+* ---- {wnid folder}
+* ---- ...
+* --- ... (for each classification one folder)
+* -- train
+* --- bear
+* --- ... (for each classification one folder)
+* -- validation
+* --- bear
+* --- ... (for each classification one folder)
