@@ -30,11 +30,12 @@ SOFTWARE.
 ## Requirements:
 You need to have in the same folder as ImageDownloader.py is located the following
 file structure:
-* - images
-* -- wnids.json
-* -- unsorted
-* --- bear
-* --- ... (for each classification one folder)
+
+-> images  
+--> wnids.json  
+--> unsorted  
+---> bear  
+---> ... (for each classification one folder)  
 
 
 The wnid.json file is a dictionary consisting of classification names as key and
@@ -47,7 +48,7 @@ an array of a number of wnid as value. E. g.:
         ],
         ...
     }
-    
+
 The keys must have a folder in unsorted/ with the same name as the key.
 
 
