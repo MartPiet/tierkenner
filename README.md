@@ -47,6 +47,7 @@ matplotlib, coremltools, h5py and cPickle.
 To save the generated results you need to have in the same folder where
 tierkenner.py is located a folder named "Results". In That folder the
 following folders are needed:
+
 - CoreMLModels
 - Plots
 - ProgramHistory
@@ -80,7 +81,9 @@ will be saved.
 
 ## Note
 To load a trained model, load get the model from your Model.py by using:
-model = define_model(input_shape, num_classes)
-After you have your model, you need the weights that fits to your 
-model:
-model.load_weights('{version_number}_weighted.h5')
+
+    model = define_model(input_shape, num_classes)
+
+After you have your model, you need the weights that fits to your model:
+
+    model.load_weights('{version_number}_weighted.h5')
