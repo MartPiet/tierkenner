@@ -1,0 +1,64 @@
+{
+    "project": {
+        "project_name": "tierkenner", 
+        "version": "5_10", 
+        "build": 35
+    }, 
+    "directories": {
+        "model_architectures_dir": "ModelArchitectures/", 
+        "coreml_models_dir": "CoreMLModels/", 
+        "plots_dir": "Plots/", 
+        "checkpoints_dir": "Checkpoints/", 
+        "weighted_models_dir": "WeightedModels/", 
+        "results_dir": "Results/", 
+        "program_history_dir": "ProgramHistory/", 
+        "train_data_dir": "images/large_dataset/train", 
+        "train_histories_dir": "TrainHistories/", 
+        "ressources_dir": "tierkenner_ressources/", 
+        "validation_data_dir": "images/large_dataset/validation"
+    }, 
+    "result_filenames": {
+        "weight": "weighted.h5", 
+        "plot_accuracy": "accuracy.png", 
+        "coreml": ".mlmodel", 
+        "train_program": "training.py", 
+        "checkpoint": "weighted.hdf5", 
+        "model_architecture": "model.h5", 
+        "train_history": "history.pickle", 
+        "plot_loss": "loss.png", 
+        "main_program": ".py", 
+        "model_program": "model.py"
+    }, 
+    "coreml_metadata": {
+        "input_names": [
+            "image"
+        ], 
+        "description": "Guesses the animal.", 
+        "license": "MIT", 
+        "author": "Martin Pietrowski", 
+        "image_input_names": [
+            "image"
+        ], 
+        "class_labels": [
+            "bear", 
+            "cat", 
+            "dog", 
+            "eagle", 
+            "fish", 
+            "frog", 
+            "horse", 
+            "monkey", 
+            "snake", 
+            "turtle"
+        ], 
+        "input_description": "Input image to be classified.", 
+        "output_names": [
+            "probabilities"
+        ], 
+        "output_description": "Probability of each animal."
+    }, 
+    "project_files": {
+        "train_program": "Training.py", 
+        "model_program": "Model.py"
+    }
+}
