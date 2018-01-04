@@ -1,4 +1,3 @@
-'''
 README.MD
 
 Bachelorthesis "Eine App zur Objekterkennung in Bildern mittels neuronaler Netze,
@@ -25,7 +24,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-'''
 
 Note: The code in this folder is in a development stage. It is only showing the
 Code that was running 100 Epochs during training the first model. The final
