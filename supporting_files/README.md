@@ -67,15 +67,16 @@ This problem can occur because sometimes the image-net.org servers are really sl
 ## Requirements
 You need to have in the same folder as SeparateImages.py is located the following
 file structure:
-* - images
-* -- unsorted
-* --- bear
-* ---- {wnid folder}
-* ---- ...
-* --- ... (for each classification one folder)
-* -- train
-* --- bear
-* --- ... (for each classification one folder)
-* -- validation
-* --- bear
-* --- ... (for each classification one folder)
+
+-> images  
+--> unsorted  
+---> bear  
+----> {wnid folder}  
+----> ...  
+---> ... (for each classification one folder)  
+--> train  
+---> bear  
+---> ... (for each classification one folder)  
+--> validation  
+---> bear  
+---> ... (for each classification one folder)  
