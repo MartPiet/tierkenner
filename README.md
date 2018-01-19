@@ -48,6 +48,7 @@ following folders are needed:
 
 - CoreMLModels
 - Plots
+- Checkpoints
 - ProgramHistory
 - TrainHistories
 - WeightedModels
