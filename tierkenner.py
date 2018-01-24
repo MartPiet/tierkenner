@@ -29,10 +29,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
 
+import argparse
 from tierkenner_ressources import ModelExporter, Model, Training, Config, ImagePreprocessor
 import keras
 
-def main():
+def main(new, epochs):
     '''
     Defines model and training. Trains model with given data. Saves results.
 
@@ -61,7 +62,7 @@ def main():
     num_classes = 14
 
     # Number of training epochs.
-    epochs = 100
+    #epochs = 100
 
     # Batch size.
     batch_size = 64
@@ -98,6 +99,12 @@ def main():
 
         # Defining model and training.
         model = model_architecture.define_model(input_shape, num_classes)
+
+        if not new:
+            print 'Loading weights'
+            current_version = tmp_config.get_current_version()
+            model.load_weights(current_version + '_weighted.h5')
+        
         training.define_training(model, optimizer, loss)
 
         # Starting training, then save results.
@@ -108,4 +115,20 @@ def main():
             print 'Error while starting training.'
 
 if __name__ == '__main__':
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--load",
+        help="Loads unfinished project.",
+        action="store_true"
+        )
+    parser.add_argument(
+        "--epochs",
+        default=100,
+        help="Set a specific number of epochs."
+        )
+
+    args = parser.parse_args()
+    if args.load:
+        main(False, args.epochs)
+    else:
+        main(True, args.epochs)
