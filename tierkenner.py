@@ -103,7 +103,7 @@ def main(new, epochs):
         if not new:
             print 'Loading weights'
             current_version = tmp_config.get_current_version()
-            model.load_weights(current_version + '_weighted.h5')
+            model.load_weights('Results/Checkpoints/' + current_version + '_weighted.h5')
         
         training.define_training(model, optimizer, loss)
 
