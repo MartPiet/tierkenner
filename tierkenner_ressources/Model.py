@@ -49,6 +49,8 @@ class Model(object):
         # This model wil be a feed forward net. The layers will be organized sequentially.
         model = Sequential()
 
+        activation = LeakyReLU()
+
         # Model overview:
         # conv3-64
         # maxpool
@@ -75,33 +77,33 @@ class Model(object):
         # activation layer, batch normalization is being used.
         model.add(Conv2D(64, (3, 3), padding='same', input_shape=input_shape))
         model.add(BatchNormalization())
-        model.add(LeakyReLU())
+        model.add(activation)
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
         model.add(Conv2D(64, (3, 3), padding='same'))
         model.add(BatchNormalization())
-        model.add(LeakyReLU())
+        model.add(activation)
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
         model.add(Conv2D(64, (3, 3), padding='same'))
         model.add(BatchNormalization())
-        model.add(LeakyReLU())
+        model.add(activation)
         model.add(Conv2D(64, (3, 3), padding='same'))
         model.add(BatchNormalization())
-        model.add(LeakyReLU())
+        model.add(activation)
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
         model.add(Conv2D(64, (3, 3), padding='same'))
         model.add(BatchNormalization())
-        model.add(LeakyReLU())
+        model.add(activation)
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
         model.add(Conv2D(64, (3, 3), padding='same'))
         model.add(BatchNormalization())
-        model.add(LeakyReLU())
+        model.add(activation)
         model.add(Conv2D(64, (3, 3), padding='same'))
         model.add(BatchNormalization())
-        model.add(LeakyReLU())
+        model.add(activation)
 
         # After flattening the input from 3D (RGB) to 1D a fully connected
         # layer with 512 neurons is being used. After ReLU and pooling, a dropout of 0.4
@@ -111,18 +113,18 @@ class Model(object):
         model.add(Flatten())
         model.add(Dense(512))
         model.add(BatchNormalization())
-        model.add(LeakyReLU())
+        model.add(activation)
         model.add(Dropout(0.4))
 
         model.add(Dense(512))
         model.add(BatchNormalization())
-        model.add(LeakyReLU())
+        model.add(activation)
         model.add(Dropout(0.4))
 
         model.add(Dense(512))
 
         model.add(BatchNormalization())
-        model.add(LeakyReLU())
+        model.add(activation)
         model.add(Dropout(0.4))
 
         # Last layer (output layer). This layer has to have as much neurons as
