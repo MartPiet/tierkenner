@@ -76,33 +76,33 @@ class Model(object):
         # Convolution layer. This time the input shape will be set implicitly. Behind another
         # Leaky ReLU layer a pooling layer of size 2x2 is following. Before every
         # activation layer, batch normalization is being used.
-        model.add(Conv2D(64, (3, 3), padding='same', input_shape=input_shape), kernel_regularizer=regularizers.l2(0.01))
+        model.add(Conv2D(64, (3, 3), padding='same', input_shape=input_shape, kernel_regularizer=regularizers.l2(0.01)))
         model.add(BatchNormalization())
         model.add(activation)
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
-        model.add(Conv2D(64, (3, 3), padding='same'), kernel_regularizer=regularizers.l2(0.01))
+        model.add(Conv2D(64, (3, 3), padding='same', kernel_regularizer=regularizers.l2(0.01)))
         model.add(BatchNormalization())
         model.add(activation)
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
-        model.add(Conv2D(64, (3, 3), padding='same'), kernel_regularizer=regularizers.l2(0.01))
+        model.add(Conv2D(64, (3, 3), padding='same', kernel_regularizer=regularizers.l2(0.01)))
         model.add(BatchNormalization())
         model.add(activation)
-        model.add(Conv2D(64, (3, 3), padding='same'), kernel_regularizer=regularizers.l2(0.01))
-        model.add(BatchNormalization())
-        model.add(activation)
-        model.add(MaxPooling2D(pool_size=(2, 2)))
-
-        model.add(Conv2D(64, (3, 3), padding='same'), kernel_regularizer=regularizers.l2(0.01))
+        model.add(Conv2D(64, (3, 3), padding='same', kernel_regularizer=regularizers.l2(0.01)))
         model.add(BatchNormalization())
         model.add(activation)
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
-        model.add(Conv2D(64, (3, 3), padding='same'), kernel_regularizer=regularizers.l2(0.01))
+        model.add(Conv2D(64, (3, 3), padding='same', kernel_regularizer=regularizers.l2(0.01)))
         model.add(BatchNormalization())
         model.add(activation)
-        model.add(Conv2D(64, (3, 3), padding='same'), kernel_regularizer=regularizers.l2(0.01))
+        model.add(MaxPooling2D(pool_size=(2, 2)))
+
+        model.add(Conv2D(64, (3, 3), padding='same', kernel_regularizer=regularizers.l2(0.01)))
+        model.add(BatchNormalization())
+        model.add(activation)
+        model.add(Conv2D(64, (3, 3), padding='same', kernel_regularizer=regularizers.l2(0.01)))
         model.add(BatchNormalization())
         model.add(activation)
 
@@ -112,24 +112,24 @@ class Model(object):
         # there are much more neurons than in the previous convolution layers.
 
         model.add(Flatten())
-        model.add(Dense(512), kernel_regularizer=regularizers.l2(0.01))
+        model.add(Dense(512, kernel_regularizer=regularizers.l2(0.01)))
         model.add(BatchNormalization())
         model.add(activation)
         model.add(Dropout(0.4))
 
-        model.add(Dense(512), kernel_regularizer=regularizers.l2(0.01))
+        model.add(Dense(512, kernel_regularizer=regularizers.l2(0.01)))
         model.add(BatchNormalization())
         model.add(activation)
         model.add(Dropout(0.4))
 
-        model.add(Dense(512), kernel_regularizer=regularizers.l2(0.01))
+        model.add(Dense(512, kernel_regularizer=regularizers.l2(0.01)))
         model.add(BatchNormalization())
         model.add(activation)
         model.add(Dropout(0.4))
 
         # Last layer (output layer). This layer has to have as much neurons as
         # there are labels. Softmax is the normalization function.
-        model.add(Dense(num_classes), kernel_regularizer=regularizers.l2(0.01))
+        model.add(Dense(num_classes, kernel_regularizer=regularizers.l2(0.01)))
         model.add(Activation('softmax'))
 
         # Prints architecture of the defined model.
