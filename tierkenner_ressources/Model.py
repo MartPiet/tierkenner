@@ -77,33 +77,33 @@ class Model(object):
         # Leaky ReLU layer a pooling layer of size 2x2 is following. Before every
         # activation layer, batch normalization is being used.
         model.add(Conv2D(64, (3, 3), kernel_initializer='lecun_normal', padding='same', input_shape=input_shape))
-        model.add(BatchNormalization())
+        #model.add(BatchNormalization())
         model.add(Activation('selu'))
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
         model.add(Conv2D(64, (3, 3), kernel_initializer='lecun_normal', padding='same'))
-        model.add(BatchNormalization())
+        #model.add(BatchNormalization())
         model.add(Activation('selu'))
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
         model.add(Conv2D(64, (3, 3), kernel_initializer='lecun_normal', padding='same'))
-        model.add(BatchNormalization())
+        #model.add(BatchNormalization())
         model.add(Activation('selu'))
         model.add(Conv2D(64, (3, 3), kernel_initializer='lecun_normal', padding='same'))
-        model.add(BatchNormalization())
-        model.add(Activation('selu'))
-        model.add(MaxPooling2D(pool_size=(2, 2)))
-
-        model.add(Conv2D(64, (3, 3), kernel_initializer='lecun_normal', padding='same'))
-        model.add(BatchNormalization())
+        #model.add(BatchNormalization())
         model.add(Activation('selu'))
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
         model.add(Conv2D(64, (3, 3), kernel_initializer='lecun_normal', padding='same'))
-        model.add(BatchNormalization())
+        #model.add(BatchNormalization())
+        model.add(Activation('selu'))
+        model.add(MaxPooling2D(pool_size=(2, 2)))
+
+        model.add(Conv2D(64, (3, 3), kernel_initializer='lecun_normal', padding='same'))
+        #model.add(BatchNormalization())
         model.add(Activation('selu'))
         model.add(Conv2D(64, (3, 3), kernel_initializer='lecun_normal', padding='same'))
-        model.add(BatchNormalization())
+        #model.add(BatchNormalization())
         model.add(Activation('selu'))
 
         # After flattening the input from 3D (RGB) to 1D a fully connected
@@ -113,17 +113,17 @@ class Model(object):
 
         model.add(Flatten())
         model.add(Dense(512, kernel_initializer='lecun_normal'))
-        model.add(BatchNormalization())
+        #model.add(BatchNormalization())
         model.add(activation)
         model.add(AlphaDropout(0.4))
     
         model.add(Dense(512, kernel_initializer='lecun_normal'))
-        model.add(BatchNormalization())
+        #model.add(BatchNormalization())
         model.add(activation)
         model.add(AlphaDropout(0.4))
 
         model.add(Dense(512, kernel_initializer='lecun_normal'))
-        model.add(BatchNormalization())
+        #model.add(BatchNormalization())
         model.add(activation)
         model.add(AlphaDropout(0.4))
 
