@@ -28,7 +28,7 @@ SOFTWARE.
 
 from keras.models import Sequential
 from keras.layers import Conv2D, BatchNormalization, MaxPooling2D
-from keras.layers import Activation, Dropout, Flatten, Dense
+from keras.layers import Activation, Dropout, AlphaDropout, Flatten, Dense
 from keras.layers.advanced_activations import LeakyReLU
 from keras import regularizers
 
@@ -76,35 +76,35 @@ class Model(object):
         # Convolution layer. This time the input shape will be set implicitly. Behind another
         # Leaky ReLU layer a pooling layer of size 2x2 is following. Before every
         # activation layer, batch normalization is being used.
-        model.add(Conv2D(64, (3, 3), padding='same', input_shape=input_shape, kernel_regularizer=regularizers.l2(0.01)))
+        model.add(Conv2D(64, kernel_initializer='lecun_normal', (3, 3), padding='same'))
         model.add(BatchNormalization())
-        model.add(activation)
+        model.add(Activation('selu'))
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
-        model.add(Conv2D(64, (3, 3), padding='same', kernel_regularizer=regularizers.l2(0.01)))
+        model.add(Conv2D(64, kernel_initializer='lecun_normal', (3, 3), padding='same'))
         model.add(BatchNormalization())
-        model.add(activation)
+        model.add(Activation('selu'))
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
-        model.add(Conv2D(64, (3, 3), padding='same', kernel_regularizer=regularizers.l2(0.01)))
+        model.add(Conv2D(64, kernel_initializer='lecun_normal', (3, 3), padding='same'))
         model.add(BatchNormalization())
-        model.add(activation)
-        model.add(Conv2D(64, (3, 3), padding='same', kernel_regularizer=regularizers.l2(0.01)))
+        model.add(Activation('selu'))
+        model.add(Conv2D(64, kernel_initializer='lecun_normal', (3, 3), padding='same'))
         model.add(BatchNormalization())
-        model.add(activation)
+        model.add(Activation('selu'))
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
-        model.add(Conv2D(64, (3, 3), padding='same', kernel_regularizer=regularizers.l2(0.01)))
+        model.add(Conv2D(64, kernel_initializer='lecun_normal', (3, 3), padding='same'))
         model.add(BatchNormalization())
-        model.add(activation)
+        model.add(Activation('selu'))
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
-        model.add(Conv2D(64, (3, 3), padding='same', kernel_regularizer=regularizers.l2(0.01)))
+        model.add(Conv2D(64, kernel_initializer='lecun_normal', (3, 3), padding='same'))
         model.add(BatchNormalization())
-        model.add(activation)
-        model.add(Conv2D(64, (3, 3), padding='same', kernel_regularizer=regularizers.l2(0.01)))
+        model.add(Activation('selu'))
+        model.add(Conv2D(64, kernel_initializer='lecun_normal', (3, 3), padding='same'))
         model.add(BatchNormalization())
-        model.add(activation)
+        model.add(Activation('selu'))
 
         # After flattening the input from 3D (RGB) to 1D a fully connected
         # layer with 512 neurons is being used. After ReLU and pooling, a dropout of 0.4
@@ -112,24 +112,24 @@ class Model(object):
         # there are much more neurons than in the previous convolution layers.
 
         model.add(Flatten())
-        model.add(Dense(512, kernel_regularizer=regularizers.l2(0.01)))
+        model.add(Dense(512, kernel_initializer='lecun_normal'))
         model.add(BatchNormalization())
         model.add(activation)
-        model.add(Dropout(0.4))
+        model.add(AlphaDropout(0.4))
+    
+        model.add(Dense(512, kernel_initializer='lecun_normal'))
+        model.add(BatchNormalization())
+        model.add(activation)
+        model.add(AlphaDropout(0.4))
 
-        model.add(Dense(512, kernel_regularizer=regularizers.l2(0.01)))
+        model.add(Dense(512, kernel_initializer='lecun_normal'))
         model.add(BatchNormalization())
         model.add(activation)
-        model.add(Dropout(0.4))
-
-        model.add(Dense(512, kernel_regularizer=regularizers.l2(0.01)))
-        model.add(BatchNormalization())
-        model.add(activation)
-        model.add(Dropout(0.4))
+        model.add(AlphaDropout(0.4))
 
         # Last layer (output layer). This layer has to have as much neurons as
         # there are labels. Softmax is the normalization function.
-        model.add(Dense(num_classes, kernel_regularizer=regularizers.l2(0.01)))
+        model.add(Dense(num_classes))
         model.add(Activation('softmax'))
 
         # Prints architecture of the defined model.
