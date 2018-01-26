@@ -12,10 +12,10 @@
         "weighted_models_dir": "WeightedModels/", 
         "results_dir": "Results/", 
         "program_history_dir": "ProgramHistory/", 
-        "train_data_dir": "images/large_dataset/train", 
+        "train_data_dir": "../datasets/tierkenner/images/large/train", 
         "train_histories_dir": "TrainHistories/", 
         "ressources_dir": "tierkenner_ressources/", 
-        "validation_data_dir": "images/large_dataset/validation"
+        "validation_data_dir": "../datasets/tierkenner/images/large/validation"
     }, 
     "result_filenames": {
         "weight": "weighted.h5", 
