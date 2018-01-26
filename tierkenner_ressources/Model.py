@@ -76,33 +76,33 @@ class Model(object):
         # Convolution layer. This time the input shape will be set implicitly. Behind another
         # Leaky ReLU layer a pooling layer of size 2x2 is following. Before every
         # activation layer, batch normalization is being used.
-        model.add(Conv2D(64, kernel_initializer='lecun_normal', (3, 3), padding='same'))
+        model.add(Conv2D(64, (3, 3), kernel_initializer='lecun_normal', padding='same'))
         model.add(BatchNormalization())
         model.add(Activation('selu'))
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
-        model.add(Conv2D(64, kernel_initializer='lecun_normal', (3, 3), padding='same'))
+        model.add(Conv2D(64, (3, 3), kernel_initializer='lecun_normal', padding='same'))
         model.add(BatchNormalization())
         model.add(Activation('selu'))
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
-        model.add(Conv2D(64, kernel_initializer='lecun_normal', (3, 3), padding='same'))
+        model.add(Conv2D(64, (3, 3), kernel_initializer='lecun_normal', padding='same'))
         model.add(BatchNormalization())
         model.add(Activation('selu'))
-        model.add(Conv2D(64, kernel_initializer='lecun_normal', (3, 3), padding='same'))
-        model.add(BatchNormalization())
-        model.add(Activation('selu'))
-        model.add(MaxPooling2D(pool_size=(2, 2)))
-
-        model.add(Conv2D(64, kernel_initializer='lecun_normal', (3, 3), padding='same'))
+        model.add(Conv2D(64, (3, 3), kernel_initializer='lecun_normal', padding='same'))
         model.add(BatchNormalization())
         model.add(Activation('selu'))
         model.add(MaxPooling2D(pool_size=(2, 2)))
 
-        model.add(Conv2D(64, kernel_initializer='lecun_normal', (3, 3), padding='same'))
+        model.add(Conv2D(64, (3, 3), kernel_initializer='lecun_normal', padding='same'))
         model.add(BatchNormalization())
         model.add(Activation('selu'))
-        model.add(Conv2D(64, kernel_initializer='lecun_normal', (3, 3), padding='same'))
+        model.add(MaxPooling2D(pool_size=(2, 2)))
+
+        model.add(Conv2D(64, (3, 3), kernel_initializer='lecun_normal', padding='same'))
+        model.add(BatchNormalization())
+        model.add(Activation('selu'))
+        model.add(Conv2D(64, (3, 3), kernel_initializer='lecun_normal', padding='same'))
         model.add(BatchNormalization())
         model.add(Activation('selu'))
 
