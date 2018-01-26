@@ -114,17 +114,17 @@ class Model(object):
         model.add(Flatten())
         model.add(Dense(512, kernel_initializer='lecun_normal'))
         #model.add(BatchNormalization())
-        model.add(activation)
+        model.add(Activation('selu'))
         model.add(AlphaDropout(0.4))
     
         model.add(Dense(512, kernel_initializer='lecun_normal'))
         #model.add(BatchNormalization())
-        model.add(activation)
+        model.add(Activation('selu'))
         model.add(AlphaDropout(0.4))
 
         model.add(Dense(512, kernel_initializer='lecun_normal'))
         #model.add(BatchNormalization())
-        model.add(activation)
+        model.add(Activation('selu'))
         model.add(AlphaDropout(0.4))
 
         # Last layer (output layer). This layer has to have as much neurons as
